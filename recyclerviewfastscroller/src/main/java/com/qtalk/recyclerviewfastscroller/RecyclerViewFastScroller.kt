@@ -180,6 +180,11 @@ class RecyclerViewFastScroller @JvmOverloads constructor(
      * If set to `false`, the fastScroll behavior is disabled, Default is `true`
      **/
     var isFastScrollEnabled: Boolean = Defaults.isFastScrollEnabled
+        set(value) {
+            trackView.animateVisibility(value)
+            handleImageView.animateVisibility(value)
+            field = value
+        }
 
     /**
      * The [TextView] which is used to display the popup text.
