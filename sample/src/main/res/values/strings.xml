@@ -5,4 +5,7 @@
     <string name="programming_languages_fragment">Programming Languages</string>
     <string name="contacts_fragment">Contacts</string>
     <string name="countries_by_population">Countries by population</string>
+    <string name="grid_fragment">Grid</string>
+    <string name="enable_fast_scroll">Enable fast scroll</string>
+    <string name="disable_fast_scroll">Disable fast scroll</string>
 </resources>

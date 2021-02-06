@@ -10,16 +10,18 @@ import com.qtalk.sample.fragments.AdvancedFragment
 import com.qtalk.sample.fragments.BasicFragment
 import com.qtalk.sample.fragments.ContactsFragment
 import com.qtalk.sample.fragments.ProgrammingLanguagesFragment
+import com.qtalk.sample.fragments.GridFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        private const val VIEWPAGER_COUNT = 4
+        private const val VIEWPAGER_COUNT = 5
         private const val PAGE_INDEX_BASIC = 0
         private const val PAGE_INDEX_ADVANCE = 1
         private const val PAGE_INDEX_LANGUAGES = 2
         private const val PAGE_INDEX_CONTACTS = 3
+        private const val PAGE_INDEX_GRID = 4
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +39,7 @@ class MainActivity : AppCompatActivity() {
                     PAGE_INDEX_ADVANCE -> AdvancedFragment()
                     PAGE_INDEX_LANGUAGES -> ProgrammingLanguagesFragment()
                     PAGE_INDEX_CONTACTS -> ContactsFragment()
+                    PAGE_INDEX_GRID -> GridFragment()
                     else -> throw IllegalArgumentException("Not expecting $position.")
                 }
             }
@@ -52,6 +55,7 @@ class MainActivity : AppCompatActivity() {
                 PAGE_INDEX_ADVANCE -> resources?.getString(R.string.advanced_fragment)
                 PAGE_INDEX_LANGUAGES -> resources?.getString(R.string.programming_languages_fragment)
                 PAGE_INDEX_CONTACTS -> resources?.getString(R.string.contacts_fragment)
+                PAGE_INDEX_GRID -> resources?.getString(R.string.grid_fragment)
                 else -> throw IndexOutOfBoundsException("View pager size is $VIEWPAGER_COUNT, can't access $position")
             }
         }.attach()
